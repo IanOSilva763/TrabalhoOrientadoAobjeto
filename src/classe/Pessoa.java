@@ -1,32 +1,34 @@
 package classe;
 
-public class Pessoa {
+public abstract class Pessoa{
+    protected String cpf;
+    protected String nome;
+    protected String telefone;
 
-    private String cpf;
-    private String nome;
-    private String telefone;
+    public Pessoa(){}
 
-    public String getCpf() {
-        return cpf;
+    public Pessoa (String cpf, String nome, String telefone){
+        this.cpf = cpf;
+        this.nome = nome;
+        this.telefone = telefone;
     }
 
-    public void setCpf(String cpf) {
+    public String getCpf(){
+        return this.cpf;
+    }
+    public String getNome(){
+        return this.nome;
+    }
+    public String getTelefone(){
+        return this.telefone;
+    }
+    public void setCpf(String cpf){
         this.cpf = cpf;
     }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
+    public void setNome(String nome){
         this.nome = nome;
     }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
+    public void setTelefone(String telefone){
         this.telefone = telefone;
     }
 }

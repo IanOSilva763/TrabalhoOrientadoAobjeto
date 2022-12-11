@@ -1,15 +1,22 @@
 package classe;
 
 public class Debito {
-
-    private Double valor;
-
-    public Double getValor() {
-        return valor;
+    public double valor;
+    public Debito(
+            double valor
+    ){
+        this.valor = valor;
     }
 
-    public void setValor(Double valor) {
+    public double getValor() {
+        return valor;
+    }
+    public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    public String toString() {
+        return this.valor +"";
     }
 
 }

@@ -1,19 +1,60 @@
 package classe;
+import java.util.Objects;
+public class Cliente extends Pessoa implements IUsuario{
+    private List <Endereco> endereco = new ArrayList<>();
+    private boolean vip;
+    public Cliente(){}
+    public Cliente(
+            String cpf,
+            String nome,
+            String telefone,
+            boolean vip,
+            List <Endereco> endereco
+    ){
+        this.cpf = cpf;
+        this.nome = nome;
+        this.telefone = telefone;
+        this.vip = vip;
+        this.endereco = endereco;
+    }
+    public void listarEnderecos(){
+        for (Endereco endereco: this.endereco) {
+            System.out.println(endereco);
+        }
 
-public class Cliente extends Pessoa{
-
-    private Boolean vip;
-
-    public Boolean getVip() {
-        return vip;
     }
 
-    public void setVip(Boolean vip) {
+    public boolean autenticar(){
+        return true;
+    }
+
+    public boolean getVip(){
+        return this.vip;
+    }
+    public void setVip(boolean vip){
         this.vip = vip;
     }
 
-    public void ListarEnderecos() {
+    public List <Endereco> getEndereco(){
+        return this.endereco;
+    }
+    public void setEndereco(List <Endereco> endereco){
+        this.endereco = endereco;
+    }
 
+
+
+    public String toString(){
+        return  "nome:"+ this.nome +" \n" + "telefone:"  + this.telefone +" \n" + "cpf:" + this.cpf + " \n" + "endereço --> \n" + this.endereco+ " \n" + "vip:" + this.vip +" \n";
+    }
+    public boolean equals(Object myObject ) {
+        if (this == myObject)return true;
+        if (myObject == null || this.getClass() != myObject.getClass()) return false;
+        Cliente cliente = (Cliente) myObject;
+        return Objects.equals(this.cpf, cliente.cpf);
+    }
+    public int hashCode(){
+        return Objects.hash(cpf);
     }
 
 }

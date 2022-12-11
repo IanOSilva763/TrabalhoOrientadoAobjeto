@@ -1,14 +1,22 @@
 package classe;
 
 public class Credito {
+    public double valor;
+    public Credito(
+            double valor
+    ){
+        this.valor = valor;
+    }
 
-    private Double valor;
-
-    public Double getValor() {
+    public double getValor() {
         return valor;
     }
 
-    public void setValor(Double valor) {
+    public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    public String toString() {
+        return this.valor +"";
     }
 }
