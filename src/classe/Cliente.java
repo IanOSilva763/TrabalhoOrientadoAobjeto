@@ -1,5 +1,7 @@
 package classe;
 import java.util.Objects;
+import java.util.List;
+import java.util.ArrayList;
 public class Cliente extends Pessoa implements IUsuario{
     private List <Endereco> endereco = new ArrayList<>();
     private boolean vip;
